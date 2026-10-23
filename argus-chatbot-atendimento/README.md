@@ -20,7 +20,9 @@ Este projeto apresenta um atendimento virtual independente para responder dúvid
 - Envia pelo botão ou pela tecla Enter; Shift + Enter insere uma quebra de linha.
 - Impede o envio de conteúdo vazio e normaliza acentos, pontuação e maiúsculas/minúsculas para reconhecer perguntas.
 - Distingue as mensagens da pessoa usuária e do assistente, mantém o histórico visível e acompanha a mensagem mais recente.
-- Responde a perguntas sobre o produto, a Web e a Platform, os agentes, público, benefícios pretendidos, instalação, privacidade e planos propostos.
+- Reconhece saudações, agradecimentos, despedidas e pedidos para repetir a resposta anterior.
+- Responde a perguntas sobre o produto, a Web e a Platform, os agentes, computadores autorizados, privacidade, conectividade, compatibilidade e planos propostos.
+- Explica que as respostas seguem palavras-chave, informa quando a documentação não confirma um detalhe e não consulta o sistema principal.
 - Informa quando não reconhece a pergunta e permite continuar a conversa.
 - Insere as mensagens como texto, sem interpretar a entrada como HTML.
 - Adapta a interface a telas menores e respeita a preferência do sistema por movimento reduzido.
@@ -58,6 +60,14 @@ argus-chatbot-atendimento/
 - O que é a Platform?
 - Qual é a diferença entre Web e Platform?
 - Quais são os planos? / Quanto custa o plano Pro? / Existe um plano gratuito?
+- Oi, tudo bem? / Obrigado! / Até mais!
+- Quantos computadores posso acompanhar? / Qual é o limite do plano Pro?
+- O ARGUS pode monitorar qualquer computador?
+- O ARGUS funciona em celular? / Quais informações ele monitora?
+- Este chatbot está conectado ao sistema? / Precisa de internet?
+- Este chatbot usa inteligência artificial? / Como funciona?
+- Pode repetir? / Como limpo o histórico da conversa?
+- Qual é a origem do nome ARGUS?
 - Quem pode utilizar o ARGUS?
 - Preciso instalar algo nos computadores?
 - Como os dados chegam ao sistema?
@@ -66,13 +76,6 @@ argus-chatbot-atendimento/
 - Como posso contratar?
 - O que você consegue responder?
 - Qual é a capital de um país imaginário?
-
-## Testes realizados
-
-- `node --check script.js`: passou, sem erros de sintaxe.
-- Teste funcional local em Node: passou em 19 perguntas e variações, cobrindo as categorias obrigatórias, acentos e capitalização, preços, desconhecidos, segurança com `textContent`, envio pelo formulário e Enter, bloqueio de mensagens vazias, continuidade da conversa e rolagem.
-- Smoke test no Chrome headless: passou ao clicar numa sugestão, enviar pelo botão e por Enter, e tentar enviar uma mensagem vazia; as respostas apareceram, as sugestões foram ocultadas, o botão foi desabilitado para texto vazio e não ocorreram erros JavaScript.
-- Conferência visual em Chrome headless em janela ampla e estreita; as regras CSS incluem os breakpoints responsivos e a preferência por movimento reduzido.
 
 ## Justificativa técnica
 

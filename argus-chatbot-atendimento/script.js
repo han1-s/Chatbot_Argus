@@ -1,14 +1,14 @@
-const empresa = {};
-empresa.nome = "ARGUS";
-empresa.descricao = "Sistema de monitoramento e análise de computadores para empresas.";
-empresa.objetivo = "Proporcionar uma visão centralizada de computadores autorizados, acompanhar informações de atividades e apoiar a análise da utilização dos recursos computacionais.";
-empresa.publicoAlvo = "Empresas, equipes de TI e organizações que precisam acompanhar computadores de seu ambiente de trabalho.";
-empresa.funcionamento = "A Web oferece a interface administrativa. A Platform participa do monitoramento e da apresentação das informações recebidas dos agentes instalados nos computadores autorizados. Web e Platform utilizam a mesma conta e o mesmo banco de dados MySQL.";
-empresa.privacidade = "O monitoramento deve ocorrer com autorização da organização, transparência e os cuidados necessários com dados pessoais. Esta descrição não representa uma certificação nem confirma mecanismos específicos de segurança.";
-empresa.requisitos = "O projeto principal documenta Windows 10/11, versões LTS compatíveis do Node.js e MySQL Server 8 ou superior. O chatbot independente funciona em um navegador moderno e não depende desses componentes.";
+const empresa = {
+  nome: "ARGUS",
+  descricao: "Sistema de monitoramento e análise de computadores para empresas.",
+  objetivo: "Proporcionar uma visão centralizada de computadores autorizados, acompanhar informações de atividades e apoiar a análise da utilização dos recursos computacionais.",
+  publicoAlvo: "Empresas, equipes de TI e organizações que precisam acompanhar computadores de seu ambiente de trabalho.",
+  funcionamento: "A Web oferece a interface administrativa. A Platform participa do monitoramento e da apresentação das informações recebidas dos agentes instalados nos computadores autorizados. Web e Platform utilizam a mesma conta e o mesmo banco de dados MySQL.",
+  privacidade: "O monitoramento deve ocorrer com autorização da organização, transparência e os cuidados necessários com dados pessoais. Esta descrição não representa uma certificação nem confirma mecanismos específicos de segurança.",
+  requisitos: "O projeto principal documenta Windows 10/11, versões LTS compatíveis do Node.js e MySQL Server 8 ou superior. O chatbot independente funciona em um navegador moderno e não depende desses componentes."
+};
 
-const servicos = [];
-servicos.push(
+const servicos = [
   {
     nome: "Free",
     valorMensal: "R$ 0,00",
@@ -36,7 +36,7 @@ servicos.push(
     recursos: ["Recursos propostos de IA", "API", "Disponibilidade 24 horas por dia"],
     proposta: true
   }
-);
+];
 
 const palavrasChave = {
   contratacao: [
@@ -109,6 +109,60 @@ const palavrasChave = {
     "como funciona o sistema", "como funciona esse sistema", "funcionamento do argus",
     "monitoramento funciona", "acompanhar computadores", "computadores monitorados"
   ],
+  limiteComputadores: [
+    "quantos computadores", "limite de computadores", "limite de pcs",
+    "quantos pcs", "quantos equipamentos", "quantos dispositivos"
+  ],
+  autorizacao: [
+    "pode monitorar qualquer computador", "monitorar qualquer computador",
+    "qualquer computador pode ser monitorado", "pode monitorar meu computador",
+    "monitorar meu computador", "monitorar computador pessoal", "computador autorizado",
+    "computadores autorizados", "quem pode ser monitorado"
+  ],
+  compatibilidade: [
+    "funciona no celular", "funciona em celular", "monitora celular", "monitorar celular",
+    "monitora smartphone", "monitorar smartphone", "funciona no android", "funciona no iphone",
+    "suporte para celular", "suporte para smartphone"
+  ],
+  conexaoChatbot: [
+    "chatbot conectado", "assistente conectado", "chatbot conectado ao argus",
+    "assistente conectado ao argus", "conversa com o sistema",
+    "acessa meus dados", "acessa o banco de dados", "conecta ao sistema principal",
+    "conexao com o argus", "os dados desta conversa", "voce esta conectado",
+    "esta conectado ao argus", "voce consulta o argus", "essa conversa e armazenada"
+  ],
+  internet: [
+    "precisa de internet", "funciona sem internet", "sem internet", "funciona offline",
+    "precisa estar online", "usa internet"
+  ],
+  limparConversa: [
+    "limpar conversa", "apagar conversa", "limpar historico", "apagar historico",
+    "reiniciar conversa", "comecar de novo", "comecar novamente"
+  ],
+  naturezaChatbot: [
+    "voce e uma ia", "voce e inteligencia artificial", "o assistente usa ia",
+    "voce e um robo", "como voce funciona", "como voce responde", "como funciona o chatbot",
+    "o chatbot e uma ia", "o chatbot usa ia", "o chatbot usa inteligencia artificial"
+  ],
+  naturezaProduto: [
+    "argus usa ia", "argus utiliza ia", "argus tem ia", "argus usa inteligencia artificial",
+    "argus e uma ia", "ia do argus", "argus tem inteligencia artificial"
+  ],
+  informacoesMonitoradas: [
+    "o que o argus monitora", "o que monitora o argus", "quais dados o argus monitora",
+    "quais dados sao monitorados", "quais informacoes sao monitoradas",
+    "quais informacoes o argus monitora", "quais informacoes o sistema monitora",
+    "que informacoes o argus coleta", "dados monitorados", "argus monitora tela",
+    "captura tela", "grava tela", "monitora funcionarios"
+  ],
+  identidade: [
+    "quem e voce", "qual seu nome", "qual e seu nome", "como voce se chama",
+    "quem esta falando", "quem esta respondendo", "quem esta atendendo"
+  ],
+  origemNome: [
+    "origem do argus", "origem do nome argus", "significado do nome argus", "por que o nome argus",
+    "o que significa argus", "quem criou o argus", "quem desenvolveu o argus"
+  ],
   apresentacao: [
     "para que serve", "qual a funcao", "qual e a funcao", "objetivo do argus",
     "objetivo desse sistema", "finalidade do argus", "finalidade do sistema",
@@ -116,7 +170,11 @@ const palavrasChave = {
     "me explica o argus", "me fale sobre o argus", "me fala do argus", "sobre o argus",
     "o que faz o argus", "que sistema e esse", "que programa e esse"
   ],
-  saudacao: ["ola", "oi", "bom dia", "boa tarde", "boa noite", "tudo bem"]
+  bemEstar: ["tudo bem", "como voce esta"],
+  agradecimento: ["obrigado", "obrigada", "valeu", "agradeco", "agradecida", "agradecido"],
+  despedida: ["tchau", "ate mais", "ate logo", "ate a proxima", "vou sair"],
+  repeticao: ["pode repetir", "repita", "repete", "nao entendi", "fala de novo", "fale de novo", "pode falar de novo"],
+  saudacao: ["ola", "oi", "opa", "e ai", "bom dia", "boa tarde", "boa noite"]
 };
 
 const form = document.querySelector("#chat-form");
@@ -124,6 +182,7 @@ const input = document.querySelector("#message-input");
 const conversation = document.querySelector("#conversation");
 const sendButton = document.querySelector("#send-button");
 const suggestions = document.querySelector("#suggestions");
+let ultimaResposta = "";
 const formatadorHora = new Intl.DateTimeFormat("pt-BR", {
   hour: "2-digit",
   minute: "2-digit"
@@ -140,7 +199,8 @@ function normalizarTexto(texto) {
 }
 
 function correspondeAAlgumTermo(texto, termos) {
-  return termos.some((termo) => texto.includes(termo));
+  const textoComLimites = ` ${texto} `;
+  return termos.some((termo) => textoComLimites.includes(` ${termo} `));
 }
 
 function adicionarMensagem(remetente, texto) {
@@ -230,6 +290,28 @@ function obterResposta(mensagem) {
     return responderSobrePlano("Business");
   } else if (correspondeAAlgumTermo(pergunta, palavrasChave.todosPlanos)) {
     return listarPlanos();
+  } else if (correspondeAAlgumTermo(pergunta, palavrasChave.limiteComputadores)) {
+    return "A proposta prevê até 10 computadores no Free, até 50 no Pro e computadores ilimitados no Business. Os valores e recursos são uma proposta do projeto; a disponibilidade precisa ser confirmada com a equipe responsável.";
+  } else if (correspondeAAlgumTermo(pergunta, palavrasChave.autorizacao)) {
+    return "O ARGUS é apresentado para acompanhar computadores autorizados da organização. O monitoramento deve ter autorização, transparência e os cuidados necessários com dados pessoais. A proposta não é monitorar qualquer computador sem consentimento.";
+  } else if (correspondeAAlgumTermo(pergunta, palavrasChave.compatibilidade)) {
+    return "A documentação do ARGUS descreve monitoramento de computadores. Ela não confirma suporte para celulares ou outros dispositivos móveis; essa compatibilidade precisa ser consultada com a equipe responsável.";
+  } else if (correspondeAAlgumTermo(pergunta, palavrasChave.conexaoChatbot)) {
+    return "Não. Esta demonstração não se conecta ao sistema principal, não consulta o banco de dados do ARGUS e não envia a conversa para um serviço externo. As respostas vêm de informações cadastradas neste projeto.";
+  } else if (correspondeAAlgumTermo(pergunta, palavrasChave.internet)) {
+    return "Depois de baixar os arquivos do projeto, você pode abrir o chatbot localmente em um navegador moderno. Ele não precisa de conexão com a internet nem de serviços externos para responder.";
+  } else if (correspondeAAlgumTermo(pergunta, palavrasChave.limparConversa)) {
+    return "O histórico fica apenas na página aberta. Atualize a página para iniciar uma conversa nova; as mensagens não são salvas pelo chatbot.";
+  } else if (correspondeAAlgumTermo(pergunta, palavrasChave.naturezaChatbot)) {
+    return "Esta demonstração não usa inteligência artificial generativa. Ela identifica palavras-chave e mostra respostas escritas previamente em uma base local.";
+  } else if (correspondeAAlgumTermo(pergunta, palavrasChave.naturezaProduto)) {
+    return "A documentação disponível não confirma funções de inteligência artificial no produto ARGUS. Ela menciona recursos de IA como parte da proposta do plano Business, sem confirmar disponibilidade para contratação.";
+  } else if (correspondeAAlgumTermo(pergunta, palavrasChave.informacoesMonitoradas)) {
+    return "A descrição do projeto fala em acompanhar informações de atividades nos computadores autorizados, mas não detalha tipos específicos de dados coletados. Para esses detalhes, consulte a equipe responsável.";
+  } else if (correspondeAAlgumTermo(pergunta, palavrasChave.identidade)) {
+    return "Sou o assistente virtual demonstrativo do ARGUS. Posso responder perguntas introdutórias com informações cadastradas neste chatbot.";
+  } else if (correspondeAAlgumTermo(pergunta, palavrasChave.origemNome)) {
+    return "A documentação disponível para este projeto não informa a origem do nome ARGUS nem quem criou o produto. Posso explicar as funções e os componentes descritos.";
   } else if (correspondeAAlgumTermo(pergunta, palavrasChave.privacidade)) {
     return empresa.privacidade;
   } else if (correspondeAAlgumTermo(pergunta, palavrasChave.beneficios)) {
@@ -252,6 +334,14 @@ function obterResposta(mensagem) {
     const descricao = empresa.descricao.toLocaleLowerCase("pt-BR");
     const objetivo = empresa.objetivo.toLocaleLowerCase("pt-BR");
     return `${empresa.nome} é um ${descricao} Seu objetivo é ${objetivo} A solução oferece uma visão centralizada para apoiar o acompanhamento dos computadores autorizados da organização.`;
+  } else if (correspondeAAlgumTermo(pergunta, palavrasChave.bemEstar)) {
+    return "Tudo pronto para ajudar! Posso explicar o ARGUS, seus componentes, os computadores autorizados ou os planos propostos.";
+  } else if (correspondeAAlgumTermo(pergunta, palavrasChave.agradecimento)) {
+    return "Por nada! Se surgir outra dúvida sobre o ARGUS, pode perguntar.";
+  } else if (correspondeAAlgumTermo(pergunta, palavrasChave.despedida)) {
+    return "Até mais! Quando quiser, volte para perguntar sobre o ARGUS.";
+  } else if (correspondeAAlgumTermo(pergunta, palavrasChave.repeticao)) {
+    return ultimaResposta || "Ainda não respondi uma pergunta para repetir. Você pode perguntar sobre o ARGUS, seus componentes, os planos ou privacidade.";
   } else if (correspondeAAlgumTermo(pergunta, palavrasChave.saudacao)) {
     return "Olá! Posso ajudar com informações sobre o ARGUS, o monitoramento, os componentes Web e Platform, privacidade e os planos propostos. O que você gostaria de saber?";
   } else {
@@ -282,9 +372,9 @@ function enviarMensagem(texto = input.value) {
   ajustarAlturaInput();
   atualizarBotao();
 
-  window.setTimeout(() => {
-    adicionarMensagem("assistant", obterResposta(mensagem));
-  }, 180);
+  const resposta = obterResposta(mensagem);
+  ultimaResposta = resposta;
+  window.setTimeout(() => adicionarMensagem("assistant", resposta), 180);
 
   input.focus();
   return true;
