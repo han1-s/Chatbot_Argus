@@ -86,4 +86,4 @@ Esta é uma aplicação independente. Ela não importa arquivos do produto princ
 
 Repositório: [han1-s/Chatbot_Argus](https://github.com/han1-s/Chatbot_Argus).
 
-O GitHub Pages é publicado pelo workflow em `.github/workflows/pages.yml`; o link da demonstração será registrado depois que a primeira execução confirmar a publicação.
+O GitHub Pages usa a branch `gh-pages`, que contém `index.html`, `style.css` e `script.js` na raiz. Para publicar uma atualização, sincronize esses três arquivos de `argus-chatbot-atendimento/` com a raiz de `gh-pages` e envie as duas branches ao repositório.
