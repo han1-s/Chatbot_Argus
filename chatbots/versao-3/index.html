@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10111a">
+  <meta name="description" content="Assistente técnico local do ARGUS, com respostas baseadas na documentação disponível.">
+  <title>ARGUS | Assistente técnico</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="technical-app">
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="ARGUS, início"><span class="brand-eye" aria-hidden="true"><i></i></span><span>ARGUS</span></a>
+      <div class="product-path"><span>BASE TÉCNICA</span><b>/</b><span>DOCUMENTAÇÃO LOCAL</span></div>
+      <span class="release">V3 · ASSISTENTE TÉCNICO</span>
+    </header>
+    <main id="inicio" class="technical-layout">
+      <aside class="reference-panel">
+        <div class="reference-heading"><span class="reference-icon" aria-hidden="true">⌘</span><div><p>ARGUS</p><h1>Mapa técnico</h1></div></div>
+        <p class="reference-copy">Explore os componentes e o fluxo descritos no README. Pergunte por outro tema no campo abaixo.</p>
+        <nav id="area-list" class="area-list" aria-label="Áreas técnicas"></nav>
+        <div class="scope-card"><span class="scope-dot"></span><div><strong>Escopo das respostas</strong><p>Fatos documentados são explicados. Informações ausentes são marcadas como não confirmadas.</p></div></div>
+        <div class="local-status"><span></span> BASE LOCAL · SEM CONEXÃO AO ARGUS</div>
+      </aside>
+
+      <section class="assistant-window" aria-labelledby="assistant-title">
+        <header class="window-header">
+          <div class="window-title"><div class="bot-icon" aria-hidden="true">A</div><div><h2 id="assistant-title">Assistente técnico ARGUS</h2><p>Explicações de arquitetura e operação</p></div></div>
+          <div class="window-badge"><span></span> Ativo</div>
+        </header>
+        <div class="active-area" aria-live="polite"><span>ÁREA SELECIONADA</span><strong id="active-area">Visão geral</strong><div id="topic-chips" class="topic-chips"></div></div>
+        <div id="conversation" class="conversation" role="log" aria-label="Conversa com o assistente técnico" aria-live="polite" aria-relevant="additions">
+          <div class="message-row assistant-row"><div class="message-mark" aria-hidden="true">A</div><div class="message-body"><div class="message-label">ASSISTENTE ARGUS <time>Agora</time></div><div class="message-bubble assistant-bubble">Olá! Posso explicar a arquitetura documentada do ARGUS, os papéis da Web, Platform e agentes, os requisitos e os limites das informações disponíveis. Escolha uma área ou escreva uma pergunta.</div></div></div>
+        </div>
+        <form id="chat-form" class="technical-composer" autocomplete="off">
+          <label class="visually-hidden" for="message-input">Escreva sua dúvida técnica</label>
+          <textarea id="message-input" rows="1" placeholder="Pergunte sobre componentes, requisitos, instalação..." enterkeyhint="send"></textarea>
+          <button id="send-button" type="submit" disabled aria-label="Enviar pergunta"><span>Enviar</span><b aria-hidden="true">↑</b></button>
+        </form>
+        <div class="composer-caption"><span>ENTER PARA ENVIAR</span><span>SHIFT + ENTER PARA QUEBRA DE LINHA</span><span class="caption-dot"></span></div>
+      </section>
+    </main>
+    <footer class="footer"><span>ARGUS · Assistente técnico demonstrativo</span><span>As respostas não substituem a documentação operacional do sistema.</span></footer>
+  </div>
+</body>
+</html>

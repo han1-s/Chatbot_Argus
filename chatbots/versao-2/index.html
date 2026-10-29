@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06151e">
+  <meta name="description" content="Atendimento guiado do ARGUS por categorias de perguntas frequentes.">
+  <title>ARGUS | Atendimento guiado</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="ARGUS, início"><span class="brand-symbol" aria-hidden="true">A</span><span>ARGUS</span></a>
+      <span class="topbar-label">CENTRAL DE ATENDIMENTO</span>
+      <span class="version-tag">VERSÃO 2 · GUIADA</span>
+    </header>
+
+    <main id="inicio" class="guided-layout">
+      <aside class="category-panel" aria-labelledby="category-title">
+        <p class="eyebrow">ESCOLHA UM ASSUNTO</p>
+        <h1 id="category-title">Vamos por partes.</h1>
+        <p class="category-intro">Selecione uma categoria para ver perguntas comuns. Você também pode escrever com suas próprias palavras.</p>
+        <nav id="category-list" class="category-list" aria-label="Categorias de perguntas"></nav>
+        <div class="source-note"><span aria-hidden="true">i</span><p>Respostas informativas baseadas no README disponível. O atendimento não acessa os sistemas do ARGUS.</p></div>
+      </aside>
+
+      <section class="chat-card" aria-labelledby="assistant-title">
+        <header class="chat-header">
+          <div class="status-mark" aria-hidden="true"><span></span></div>
+          <div><h2 id="assistant-title">Assistente ARGUS</h2><p>Atendimento guiado <span>·</span> base local</p></div>
+          <span class="online-label"><i></i> Disponível</span>
+        </header>
+        <div class="chat-body">
+          <div id="conversation" class="conversation" role="log" aria-label="Conversa com o assistente" aria-live="polite" aria-relevant="additions">
+            <div class="message-row assistant-row"><div class="avatar assistant-avatar" aria-hidden="true">A</div><div class="message-stack"><span class="speaker">Assistente ARGUS</span><div class="bubble assistant-bubble">Olá! Posso orientar você por categorias ou responder uma pergunta direta. Escolha um assunto ao lado para ver sugestões.</div></div></div>
+          </div>
+          <section class="question-picker" aria-live="polite" aria-labelledby="question-title">
+            <h3 id="question-title">Perguntas desta categoria</h3>
+            <div id="question-list" class="question-list"></div>
+          </section>
+          <form id="chat-form" class="composer" autocomplete="off">
+            <label class="visually-hidden" for="message-input">Escreva sua pergunta</label>
+            <textarea id="message-input" rows="1" placeholder="Digite sua pergunta..." enterkeyhint="send"></textarea>
+            <button id="send-button" type="submit" disabled><span>Enviar</span><span aria-hidden="true">↗</span></button>
+          </form>
+          <p class="input-help"><kbd>Enter</kbd> envia <span>·</span> <kbd>Shift + Enter</kbd> cria outra linha</p>
+        </div>
+      </section>
+    </main>
+    <footer class="page-footer"><span>ARGUS · Monitoramento e análise de computadores</span><span>Versão independente para demonstração</span></footer>
+  </div>
+</body>
+</html>

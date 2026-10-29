@@ -79,7 +79,8 @@ const palavrasChave = {
   ],
   instalacao: [
     "preciso instalar", "tem que instalar", "instalar algo", "instalar um programa",
-    "instalar aplicativo", "instalacao", "requisitos do sistema", "requisitos tecnicos",
+    "instalar aplicativo", "como instalar", "configurar o argus", "configuracao do sistema",
+    "instalacao", "requisitos do sistema", "requisitos tecnicos",
     "windows 10", "windows 11", "node js", "mysql server"
   ],
   fluxoDados: [
@@ -95,6 +96,14 @@ const palavrasChave = {
     "o que voce consegue responder", "que assuntos voce responde",
     "com o que voce pode ajudar", "o que voce sabe", "quais assuntos",
     "sobre o que posso perguntar", "ajuda disponivel"
+  ],
+  funcionalidades: [
+    "quais funcionalidades", "funcionalidades do argus", "recursos do argus",
+    "o que o sistema oferece", "funcoes do argus", "quais recursos"
+  ],
+  suporte: [
+    "como obter suporte", "como falar com suporte", "contato do suporte",
+    "telefone do suporte", "email do suporte", "canal de suporte", "suporte tecnico"
   ],
   platform: [
     "o que e a platform", "o que e platform", "para que serve a platform",
@@ -317,11 +326,15 @@ function obterResposta(mensagem) {
   } else if (correspondeAAlgumTermo(pergunta, palavrasChave.beneficios)) {
     return "O ARGUS busca centralizar informações, dar visibilidade sobre os computadores monitorados, apoiar o acompanhamento de atividades e ajudar na análise da utilização dos recursos computacionais. Esses objetivos podem apoiar o trabalho da organização, mas não representam garantia de aumento de produtividade ou economia financeira.";
   } else if (correspondeAAlgumTermo(pergunta, palavrasChave.instalacao)) {
-    return `A solução principal envolve a Web, a Platform e agentes instalados nos computadores autorizados. Os requisitos documentados para o projeto principal são ${empresa.requisitos} O chatbot não precisa desses componentes.`;
+    return `O README disponível não descreve comandos nem a sequência de configuração do ARGUS. Os requisitos registrados para o projeto principal são ${empresa.requisitos} Confirme o procedimento de instalação com a equipe responsável. O chatbot independente precisa apenas de um navegador moderno.`;
+  } else if (correspondeAAlgumTermo(pergunta, palavrasChave.suporte)) {
+    return "O repositório não informa um canal oficial, telefone ou e-mail de suporte. Procure a equipe responsável pelo projeto para receber o contato correto; não vou inventar um canal.";
   } else if (correspondeAAlgumTermo(pergunta, palavrasChave.fluxoDados)) {
     return "Os agentes instalados nos computadores autorizados enviam informações para a estrutura do sistema. A Web e a Platform apresentam e permitem consultar as informações disponibilizadas. Esta versão do chatbot não se conecta aos agentes nem ao sistema principal.";
   } else if (correspondeAAlgumTermo(pergunta, palavrasChave.publico)) {
     return empresa.publicoAlvo;
+  } else if (correspondeAAlgumTermo(pergunta, palavrasChave.funcionalidades)) {
+    return "A descrição do projeto destaca a visão centralizada dos computadores autorizados, o acompanhamento de informações de atividades e o apoio à análise dos recursos computacionais. A Web oferece a interface administrativa; a Platform participa do monitoramento e da apresentação dos dados recebidos dos agentes. Recursos mais específicos não estão detalhados.";
   } else if (correspondeAAlgumTermo(pergunta, palavrasChave.ajuda)) {
     return "Posso responder sobre o que é o ARGUS e seu público, como Web, Platform e agentes participam do monitoramento, requisitos introdutórios, benefícios pretendidos, privacidade e a proposta de planos. O atendimento usa respostas cadastradas localmente e não consulta o sistema principal.";
   } else if (correspondeAAlgumTermo(pergunta, palavrasChave.platform)) {
